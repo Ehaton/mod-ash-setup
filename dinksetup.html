@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mod Ash Setup | OSRS Discord Integration</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Rubik&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://oldschool.runescape.wiki/images/thumb/Grand_Exchange.png/800px-Grand_Exchange.png') no-repeat center top fixed;
+      background-size: cover;
+      color: #fdf6d8;
+      font-family: 'Rubik', sans-serif;
+      text-shadow: 1px 1px 2px #000;
+      backdrop-filter: blur(4px);
+      padding: 2rem;
+    }
+    h1 {
+      color: #ffd700;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-family: 'MedievalSharp', cursive;
+    }
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 2px solid #daa520;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      background: #1c1c1c;
+      color: #fff8dc;
+      border: 1px solid #ffd700;
+      border-radius: 8px;
+      resize: none;
+    }
+    button {
+      background-color: #daa520;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-family: 'Rubik', sans-serif;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+      box-shadow: 0 0 5px #000;
+    }
+    button:hover {
+      background-color: #ffd700;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .step-title {
+      color: #ffd700;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      font-family: 'MedievalSharp', cursive;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 Mod Ash Dink Setup Guide</h1>
+
+  <div class="card">
+    <p class="step-title">🛠️ Step 1: Install DinkPlugin</p>
+    <ul>
+      <li>Open RuneLite</li>
+      <li>Click the Configuration icon (top-right corner)</li>
+      <li>Open the Plugin Hub (plug icon)</li>
+      <li>Search for "Dink for Discord"</li>
+      <li>Click <strong>Install</strong></li>
+    </ul>
+
+    <p class="step-title">📥 Step 2: Import Configuration</p>
+    <ul>
+      <li>Click the button below to copy the config</li>
+      <li>In RuneLite, type <code>::dinkimport</code> in chat</li>
+      <li>Paste the copied text and press Enter</li>
+    </ul>
+
+    <p class="step-title">🧪 Step 3: Test It</p>
+    <ul>
+      <li>Check DinkPlugin settings for a webhook URL</li>
+      <li>Level up or complete a task to trigger a message</li>
+      <li>Look in your OSRS Discord updates channel</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-bottom: 1rem; color:#ffd700;">📋 Dink Config</h2>
+    <textarea id="configText">%USERNAME% has received rare loot at gamble count %COUNT%: 
+
+%LOOT%
+
+%USERNAME% has died...
+
+%USERNAME% has added %ITEM% to their collection
+
+%USERNAME% has completed a quest: %QUEST%
+
+%USERNAME% has completed a slayer task: %TASK%, getting %POINTS% points and making that %TASKCOUNT% tasks completed
+
+%USERNAME% received a chat message:</textarea>
+    <button onclick="copyToClipboard()">📋 Copy Config to Clipboard</button>
+  </div>
+
+  <div class="footer">&copy; 2025 Mod Ash Setup • Powered by Old School RuneScape™ Tools</div>
+
+  <script>
+    function copyToClipboard() {
+      const textArea = document.getElementById("configText");
+      textArea.select();
+      textArea.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("✅ Config copied! Paste it in RuneLite with ::dinkimport");
+    }
+  </script>
+</body>
+</html>
